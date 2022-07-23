@@ -1,4 +1,7 @@
+from operator import imod
+
 from django.http import HttpResponse
+from django.shortcuts import render
 
 # from django.shortcuts import render
 
@@ -7,12 +10,14 @@ from django.http import HttpResponse
 
 def home(request):
     # HTTP Response
-    return HttpResponse('HOME')
+    return render(request, 'recipes/home.html', context={
+        'name': 'Huguera',
+    })
 
 
 def contato(request):
     # HTTP Response
-    return HttpResponse('Contato')
+    return render(request, 'temp.html')
 
 
 def sobre(request):
